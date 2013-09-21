@@ -19,7 +19,7 @@ install: all
 	$(INSTALL_DATA) libcuttle.so.1.0 $(DESTDIR)$(libdir)
 	ln -sf $(DESTDIR)$(libdir)libcuttle.so.1.0 $(DESTDIR)$(libdir)libcuttle.so.1
 	ln -sf $(DESTDIR)$(libdir)libcuttle.so.1.0 $(DESTDIR)$(libdir)libcuttle.so
-	mkdir -p $(DESTDIR)$(incdir)cuttle/
+	mkdir -p $(DESTDIR)$(includedir)cuttle/
 	$(INSTALL_DATA) include/utils.h $(DESTDIR)$(includedir)cuttle/
 	$(INSTALL_DATA) include/debug.h $(DESTDIR)$(includedir)cuttle/
 uninstall:
