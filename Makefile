@@ -1,5 +1,5 @@
 OBJECTS = src/utils.o
-CFLAGS = -Iinclude -Wall -fPIC
+CFLAGS = -g -Iinclude -Wall -fPIC
 INSTALL = install
 INSTALL_PROGRAM = $(INSTALL)
 INSTALL_DATA = $(INSTALL) -m 644
