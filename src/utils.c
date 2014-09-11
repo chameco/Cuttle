@@ -102,7 +102,7 @@ void *get_hash(hash_map *m, char *key)
 void set_hash(hash_map *m, char *key, void *val)
 {
 	hash_val *hv = (hash_val *) malloc(sizeof(hash_val));
-	hv->key = key;
+	strcpy(hv->key, key);
 	hv->val = val;
 	int hk = hash(key);
 	if (m->buckets[hk] == NULL) {

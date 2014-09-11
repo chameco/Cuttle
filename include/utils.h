@@ -20,7 +20,7 @@ void remove_list(list_node *l, void *data);
 int length_list(list_node *l);
 
 typedef struct hash_val {
-	char *key;
+	char key[256];
 	void *val;
 } hash_val;
 
@@ -33,5 +33,9 @@ int hash(char *key);
 void *get_hash(hash_map *m, char *key);
 void set_hash(hash_map *m, char *key, void *val);
 hash_map *copy_hash(hash_map *m);
+
+typedef struct hash_set {
+	list_node *buckets;
+} hash_set;
 
 #endif

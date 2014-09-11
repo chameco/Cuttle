@@ -10,7 +10,7 @@ datarootdir = $(prefix)/share
 datadir = $(datarootdir)
 includedir = $(prefix)/include/
 libdir = $(exec_prefix)/lib/
-all: shared
+all: shared static
 static: $(OBJECTS)
 	ar -cvq libcuttle.a $(OBJECTS)
 shared: $(OBJECTS)
@@ -22,10 +22,12 @@ install: all
 	mkdir -p $(DESTDIR)$(includedir)cuttle/
 	$(INSTALL_DATA) include/utils.h $(DESTDIR)$(includedir)cuttle/
 	$(INSTALL_DATA) include/debug.h $(DESTDIR)$(includedir)cuttle/
+	$(INSTALL_DATA) libcuttle.a $(DESTDIR)$(libdir)
 uninstall:
 	rm $(DESTDIR)$(libdir)libcuttle.so.1.0
 	rm $(DESTDIR)$(libdir)libcuttle.so.1
 	rm $(DESTDIR)$(libdir)libcuttle.so
+	rm $(DESTDIR)$(libdir)libcuttle.a
 	rm -r $(DESTDIR)$(includedir)cuttle
 clean:
 	rm $(OBJECTS)
