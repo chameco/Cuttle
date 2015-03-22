@@ -1,0 +1,8 @@
+CC = x86_64-w64-mingw32-gcc
+OBJECTS = src/utils.o
+CFLAGS = -g -Iinclude -Wall -fPIC
+all: shared
+shared: $(OBJECTS)
+	$(CC) -shared -Wl,-soname,libcuttle.dll -o libcuttle.dll $(OBJECTS)
+clean:
+	rm $(OBJECTS)

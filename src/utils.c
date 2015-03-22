@@ -112,6 +112,7 @@ void set_hash(hash_map *m, char *key, void *val)
 		for (c = m->buckets[hk]; c->next != NULL; c = c->next) {
 			if (c->data != NULL) {
 				if (strcmp(((hash_val *) c->data)->key, key) == 0) {
+					free(c->data);
 					c->data = (void *) hv;
 					return;
 				}
